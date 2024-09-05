@@ -1,4 +1,4 @@
-FROM centos:centos7
+FROM rockylinux:9.3
 
 # You can download griddb V5.5.0 directly at https://github.com/griddb/griddb/releases/tag/v5.5.0
 ENV GRIDDB_VERSION=5.5.0
