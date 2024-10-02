@@ -22,9 +22,11 @@ fi
 
 if [ -z "$IP_NOTIFICATION_MEMBER" ]; then
     echo "Run GridDB node_api client with GridDB server mode MULTICAST : $NOTIFICATION_ADDRESS $NOTIFICATION_PORT $GRIDDB_CLUSTER_NAME $GRIDDB_USERNAME $GRIDDB_PASSWORD"
+    source ~/.nvm/nvm.sh && nvm use 20
     cp node-api-${GRIDDB_NODE_API_VERSION}/sample/sample1.js .
     node sample1.js $NOTIFICATION_ADDRESS $NOTIFICATION_PORT $GRIDDB_CLUSTER_NAME $GRIDDB_USERNAME $GRIDDB_PASSWORD
 else
     echo "Run GridDB node_api client with GridDB server mode FixedList : $IP_NOTIFICATION_MEMBER:10001 $GRIDDB_CLUSTER_NAME $GRIDDB_USERNAME $GRIDDB_PASSWORD"
+    source ~/.nvm/nvm.sh && nvm use 20.
     node sample1_fixlist.js $IP_NOTIFICATION_MEMBER:10001 $GRIDDB_CLUSTER_NAME $GRIDDB_USERNAME $GRIDDB_PASSWORD
 fi
